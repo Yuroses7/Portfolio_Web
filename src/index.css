@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0f1f;
+  --bg-panel: #0f1730;
+  --bg-panel-alt: #141d3d;
+  --accent-gold: #e8b93d;
+  --accent-gold-dim: #b98f2a;
+  --accent-blue: #4a6fa5;
+  --text-primary: #eceef3;
+  --text-muted: #8a93ac;
+  --border-soft: rgba(232, 185, 61, 0.14);
+  --border-blue: rgba(74, 111, 165, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Sora', 'Inter', sans-serif;
+}
+
+.font-mono-label {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+::selection {
+  background: var(--accent-gold);
+  color: #0a0f1f;
+}
+
+/* Corner-bracket signature motif — engineering drawing reference marks */
+.blueprint-corners {
+  position: relative;
+}
+.blueprint-corners::before,
+.blueprint-corners::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--accent-gold);
+  opacity: 0.55;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+.blueprint-corners::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+.blueprint-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+.blueprint-corners:hover::before,
+.blueprint-corners:hover::after {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+}
+
+/* thin scroll progress line used in the nav */
+.scroll-progress {
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-panel-alt);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
