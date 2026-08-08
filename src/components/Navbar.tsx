@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { profile } from '../data/portfolioData'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -32,7 +31,7 @@ export default function Navbar() {
       />
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#top" className="font-display font-bold text-lg tracking-tight text-(--text-primary)">
-          Chayanan Ruaysup<span className="text-(--accent-gold)">.</span>
+          Chayanan<span className="text-(--accent-gold)">.</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8 font-mono-label text-sm text-(--text-muted)">
@@ -44,6 +43,13 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        <a
+          href={`mailto:${profile.email}`}
+          className="hidden md:inline-block text-sm font-mono-label px-4 py-2 border border-(--accent-gold)/40 text-(--accent-gold) rounded-sm hover:bg-(--accent-gold) hover:text-[#0a0f1f] transition-colors"
+        >
+          Say hello
+        </a>
 
         <button
           aria-label="Toggle menu"
