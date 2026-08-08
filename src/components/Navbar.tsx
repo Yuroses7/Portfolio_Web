@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-
+import { profile } from '../data/portfolioData'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
