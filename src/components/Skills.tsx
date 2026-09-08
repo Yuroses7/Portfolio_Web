@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { skillGroups } from '../data/portfolioData'
+import { skillIcons, DefaultSkillIcon } from '../data/skillIcons'
 import { SectionEyebrow } from './About'
 
 export default function Skills() {
@@ -24,14 +25,18 @@ export default function Skills() {
               {group.label.toUpperCase()}
             </p>
             <div className="flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <span
-                  key={item}
-                  className="text-xs px-2.5 py-1 bg-(--bg-panel-alt) rounded-sm text-(--text-primary)"
-                >
-                  {item}
-                </span>
-              ))}
+              {group.items.map((item) => {
+                const Icon = skillIcons[item] ?? DefaultSkillIcon
+                return (
+                  <span
+                    key={item}
+                    className="flex items-center gap-1.5 text-xs px-2.5 py-1 bg-(--bg-panel-alt) rounded-sm text-(--text-primary)"
+                  >
+                    <Icon className="w-3.5 h-3.5 shrink-0" />
+                    {item}
+                  </span>
+                )
+              })}
             </div>
           </motion.div>
         ))}
