@@ -81,7 +81,7 @@ export const coursework = [
 import smartGlassesImg from '../image/au_glass.png'
 import granwayTravelImg from '../image/Bus.png'
 import roomCheckImg from '../image/RoomCheck.png'
-import thaiHerbCnnImg from '../image/Herb.png'
+import thaiHerbCnnImg from '../image/Thaiherb.png'
 import movieBookingImg from '../image/moive.png'
 import workImg from '../image/work.jpg'
 import engiHackImg from '../image/engihack.jpg'
